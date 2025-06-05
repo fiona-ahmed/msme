@@ -71,6 +71,32 @@
             color: #d4a5a5;
         }
 
+        .search-container {
+            position: relative;
+        }
+
+        .search-box {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(218, 165, 165, 0.3);
+            border-radius: 25px;
+            padding: 8px 15px;
+            font-size: 0.9rem;
+            color: #4a4a4a;
+            width: 200px;
+            transition: all 0.3s ease;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: #d4a5a5;
+            background: white;
+        }
+
+        .search-box::placeholder {
+            color: #999;
+            font-style: italic;
+        }
+
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #faf8f6 0%, #f5f0eb 100%);
@@ -233,7 +259,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #f5f0eb 0%, #e8c5c5 100%);
+            background: linear-gradient(135deg, #faf8f6 0%, #e8c5c5 100%);
             border: 2px solid rgba(212, 165, 165, 0.3);
             position: relative;
         }
@@ -246,10 +272,11 @@
             border-radius: 50%;
         }
 
-        .benefit-icon.nature::before {
-            background: radial-gradient(circle, #d4a5a5 0%, #e8c5c5 100%);
+        .benefit-icon.future::before {
+            background: linear-gradient(45deg, #d4a5a5 0%, #e8c5c5 100%);
             width: 25px;
             height: 25px;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
         }
 
         .benefit-icon.science::before {
@@ -361,10 +388,10 @@
 
         .product-icon.lip::before {
             content: '';
-            width: 25px;
-            height: 15px;
+            width: 20px;
+            height: 20px;
             background: #d4a5a5;
-            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
         }
 
         .product-icon.serum::before {
@@ -402,6 +429,16 @@
             margin-bottom: 20px;
             line-height: 1.6;
             font-weight: 300;
+        }
+
+        .clinical-note {
+            background: linear-gradient(135deg, #faf8f6 0%, #f5f0eb 100%);
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-style: italic;
+            color: #4a4a4a;
+            border-left: 3px solid #d4a5a5;
         }
 
         .product-features {
@@ -445,6 +482,33 @@
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
+        }
+
+        /* Social Media Icons */
+        .social-icons {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            color: white;
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .social-icon:hover {
+            background: #d4a5a5;
+            transform: translateY(-3px);
         }
 
         /* Footer */
@@ -502,6 +566,10 @@
                 display: none;
             }
             
+            .search-container {
+                display: none;
+            }
+            
             .hero h1 {
                 font-size: 2.8rem;
             }
@@ -522,6 +590,10 @@
 
             .benefit-card, .product-card {
                 padding: 30px 25px;
+            }
+
+            .social-icons {
+                flex-wrap: wrap;
             }
         }
 
@@ -564,10 +636,13 @@
             <div class="logo">msme skin</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#products">Collection</a></li>
+                <li><a href="#shop">Shop</a></li>
                 <li><a href="#about">Our Story</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <div class="search-container">
+                <input type="text" class="search-box" placeholder="Search products...">
+            </div>
         </nav>
     </header>
 
@@ -576,8 +651,8 @@
             <div class="container">
                 <div class="hero-content fade-in-up">
                     <div class="special-offer">Exclusive Launch Collection</div>
-                    <h1 class="luxury-accent">Beauty with Purpose</h1>
-                    <p>Where natural ingredients meet proven science. Functional skincare designed for real results and effortless beauty</p>
+                    <h1 class="luxury-accent">Luxury Skincare, Redefined</h1>
+                    <p>Functional skincare for visible results and timeless elegance. Enhance your natural beauty</p>
                     <a href="#products" class="cta-button">Explore Collection</a>
                 </div>
             </div>
@@ -591,16 +666,16 @@
                         <div class="stat-label">Glowing Reviews</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">30-Day</div>
-                        <div class="stat-label">Satisfaction Promise</div>
-                    </div>
-                    <div class="stat-item">
                         <div class="stat-number">Clinically</div>
                         <div class="stat-label">Proven Results</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">Natural Ingredients</div>
+                        <div class="stat-number">30-Day</div>
+                        <div class="stat-label">Satisfaction Promise</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">Chemist</div>
+                        <div class="stat-label">Led Formulation</div>
                     </div>
                 </div>
             </div>
@@ -608,12 +683,12 @@
 
         <section class="benefits">
             <div class="container">
-                <h2 class="section-title luxury-accent">The msme skin Difference</h2>
+                <h2 class="section-title luxury-accent">The msme skin Promise</h2>
                 <div class="benefits-grid">
                     <div class="benefit-card fade-in-up">
-                        <div class="benefit-icon nature"></div>
-                        <h3 class="benefit-title">Naturally Pure</h3>
-                        <p class="benefit-description">Meticulously sourced botanical ingredients and proven actives work in harmony to deliver visible results while respecting your skin's natural balance.</p>
+                        <div class="benefit-icon future"></div>
+                        <h3 class="benefit-title">Future-Facing Formulas</h3>
+                        <p class="benefit-description">A new era of lip and skin care: evidence-based, ingredient-intelligent, and engineered to outperform.</p>
                     </div>
                     <div class="benefit-card fade-in-up">
                         <div class="benefit-icon science"></div>
@@ -631,8 +706,8 @@
 
         <section class="products" id="products">
             <div class="container">
-                <h2 class="section-title luxury-accent">Signature Collection</h2>
-                <p class="section-subtitle">Discover our curated selection of luxury skincare essentials, each thoughtfully designed to elevate your daily beauty ritual</p>
+                <h2 class="section-title luxury-accent">Our Signature Product</h2>
+                <p class="section-subtitle">Introducing our luxurious Plumping Lip Balm with honey - where nature's sweetest ingredient meets advanced skincare science</p>
                 
                 <div class="products-grid">
                     <div class="product-card fade-in-up">
@@ -640,27 +715,29 @@
                             <div class="product-icon lip"></div>
                         </div>
                         <div class="product-content">
-                            <h3 class="product-title">Plumping Lip Balm</h3>
-                            <p class="product-description">Luxurious lip treatment that delivers instant hydration and natural plumping for fuller, softer lips with lasting comfort.</p>
+                            <h3 class="product-title">Plumping Lip Balm - Honey</h3>
+                            <p class="product-description">Luxurious 20g lip treatment featuring clinically-proven Volufiline and Adifyline for volume increase, infused with honey for nourishment.</p>
+                            
                             <div class="product-features">
-                                <span class="feature-tag">Plumping</span>
-                                <span class="feature-tag">Hydrating</span>
-                                <span class="feature-tag">Natural</span>
+                                <span class="feature-tag">Volufiline</span>
+                                <span class="feature-tag">Adifyline</span>
+                                <span class="feature-tag">Filler Replacement</span>
+                                <span class="feature-tag">Pure Honey</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="product-card fade-in-up">
+                    <div class="product-card fade-in-up" style="opacity: 0.7;">
                         <div class="product-image">
                             <div class="product-icon serum"></div>
                         </div>
                         <div class="product-content">
                             <h3 class="product-title">Wrinkle Eye & Face Serum</h3>
-                            <p class="product-description">Advanced anti-aging serum targeting fine lines and wrinkles with clinically proven peptides and botanical actives.</p>
+                            <p class="product-description">Advanced anti-aging serum targeting fine lines and wrinkles with clinically proven peptides and botanical actives. Coming soon to complete your skincare routine.</p>
                             <div class="product-features">
+                                <span class="feature-tag">Coming Soon</span>
                                 <span class="feature-tag">Anti-Aging</span>
                                 <span class="feature-tag">Peptides</span>
-                                <span class="feature-tag">Clinically Tested</span>
                             </div>
                         </div>
                     </div>
@@ -673,6 +750,14 @@
                 <h2>Join the msme skin Society</h2>
                 <p>Become part of our exclusive community and discover the secrets to radiant, healthy skin with fellow beauty enthusiasts</p>
                 <a href="#" class="cta-button">Join Our Community</a>
+                
+                <div class="social-icons">
+                    <a href="#" class="social-icon">📘</a>
+                    <a href="#" class="social-icon">📷</a>
+                    <a href="#" class="social-icon">🐦</a>
+                    <a href="#" class="social-icon">📱</a>
+                    <a href="#" class="social-icon">💼</a>
+                </div>
             </div>
         </section>
     </main>
@@ -683,10 +768,10 @@
                 <div class="footer-section">
                     <h3>Collection</h3>
                     <ul>
-                        <li><a href="#">Plumping Lip Balm</a></li>
-                        <li><a href="#">Wrinkle Eye & Face Serum</a></li>
+                        <li><a href="#">Plumping Lip Balm - Honey</a></li>
+                        <li><a href="#">Wrinkle Serum (Coming Soon)</a></li>
                         <li><a href="#">Gift Sets</a></li>
-                        <li><a href="#">Coming Soon</a></li>
+                        <li><a href="#">Join Waitlist</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
