@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - msme skin | Luxury Skincare & Beauty</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #4a4a4a;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #faf8f6 0%, #f5f0eb 100%);
+            color: #4a4a4a;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(218, 165, 165, 0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2.2rem;
+            font-weight: 300;
+            color: #d4a5a5;
+            letter-spacing: 2px;
+            font-style: italic;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: #4a4a4a;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #d4a5a5;
+        }
+
+        .search-container {
+            position: relative;
+        }
+
+        .search-box {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(218, 165, 165, 0.3);
+            border-radius: 25px;
+            padding: 8px 15px;
+            font-size: 0.9rem;
+            color: #4a4a4a;
+            width: 200px;
+            transition: all 0.3s ease;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: #d4a5a5;
+            background: white;
+        }
+
+        .search-box::placeholder {
+            color: #999;
+            font-style: italic;
+        }
+
+        /* Contact Hero Section */
+        .contact-hero {
+            background: linear-gradient(135deg, #faf8f6 0%, #f5f0eb 100%);
+            color: #4a4a4a;
+            padding: 140px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="0.5" fill="rgba(212,165,165,0.1)"/><circle cx="75" cy="75" r="0.5" fill="rgba(212,165,165,0.1)"/><circle cx="25" cy="75" r="0.3" fill="rgba(212,165,165,0.05)"/><circle cx="75" cy="25" r="0.3" fill="rgba(212,165,165,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .contact-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            color: #4a4a4a;
+            letter-spacing: 2px;
+            line-height: 1.2;
+        }
+
+        .contact-hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+            font-weight: 300;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Contact Content */
+        .contact-content {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: linear-gradient(135deg, #faf8f6 0%, #f8f3ee 100%);
+            padding: 50px 40px;
+            border-radius: 15px;
+            border: 1px solid rgba(212, 165, 165, 0.1);
+        }
+
+        .contact-form h2 {
+            font-size: 2rem;
+            font-weight: 300;
+            color: #4a4a4a;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 300;
+            color: #4a4a4a;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px 20px;
+            border: 1px solid rgba(218, 165, 165, 0.3);
+            border-radius: 8px;
+            background: white;
+            color: #4a4a4a;
+            font-family: 'Georgia', serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #d4a5a5;
+            box-shadow: 0 0 10px rgba(212, 165, 165, 0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #e8c5c5 0%, #d4a5a5 100%);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 300;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'Georgia', serif;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(212, 165, 165, 0.4);
+        }
+
+        /* Contact Info */
+        .contact-info h2 {
+            font-size: 2rem;
+            font-weight: 300;
+            color: #4a4a4a;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        .contact-details {
+            margin-bottom: 40px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: linear-gradient(135deg, #faf8f6 0%, #f8f3ee 100%);
+            border-radius: 10px;
+            border: 1px solid rgba(212, 165, 165, 0.1);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #e8c5c5 0%, #d4a5a5 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .contact-text h3 {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: #4a4a4a;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .contact-text p {
+            color: #8a8a8a;
+            font-weight: 300;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #faf8f6 0%, #f8f3ee 100%);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(212, 165, 165, 0.1);
+        }
+
+        .faq-question {
+            padding: 25px 30px;
+            background: white;
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: #4a4a4a;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            font-family: 'Georgia', serif;
+        }
+
+        .faq-question:hover {
+            background: linear-gradient(135deg, #faf8f6 0%, #f8f3ee 100%);
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            color: #d4a5a5;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question.active::after {
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 30px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #faf8f6 0%, #f8f3ee 100%);
+        }
+
+        .faq-answer.active {
+            padding: 25px 30px;
+            max-height: 200px;
+        }
+
+        .faq-answer p {
+            color: #8a8a8a;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        /* Footer */
+        footer {
+            background: #2a2a2a;
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 20px;
+            color: #d4a5a5;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-section ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 300;
+        }
+
+        .footer-section ul li a:hover {
+            color: #d4a5a5;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #444;
+            padding-top: 30px;
+            color: #999;
+            text-align: center;
+            font-weight: 300;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .search-container {
+                display: none;
+            }
+            
+            .contact-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            
+            .contact-form,
+            .contact-info {
+                padding: 30px 25px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* Luxury touches */
+        .luxury-accent {
+            position: relative;
+        }
+
+        .luxury-accent::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 1px;
+            background: linear-gradient(135deg, #e8c5c5 0%, #d4a5a5 100%);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">msme skin</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="story.html">Our Story</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <div class="search-container">
+                <input type="text" class="search-box" placeholder="Search products...">
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-hero">
+            <div class="container">
+                <div class="contact-hero-content fade-in-up">
+                    <h1 class="luxury-accent">Get in Touch</h1>
+                    <p>We're here to help with questions about our products, skincare advice, or any other inquiries</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-content">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-form fade-in-up">
+                        <h2>Send us a Message</h2>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Select a topic</option>
+                                    <option value="product-inquiry">Product Inquiry</option>
+                                    <option value="skincare-advice">Skincare Advice</option>
+                                    <option value="order-support">Order Support</option>
+                                    <option value="partnership">Partnership Inquiry</option>
+                                    <option value="media">Media & Press</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" placeholder="Tell us how we can help you..." required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Send Message</button>
+                        </form>
+                    </div>
+
+                    <div class="contact-info fade-in-up">
+                        <h2>Contact Information</h2>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon">📧</div>
+                                <div class="contact-text">
+                                    <h3>Email Support</h3>
+                                    <p>hello@msmeskin.com</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">💬</div>
+                                <div class="contact-text">
+                                    <h3>Customer Care</h3>
+                                    <p>Available Mon-Fri, 9AM-6PM EST</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">📱</div>
+                                <div class="contact-text">
+                                    <h3>Social Media</h3>
+                                    <p>@msmeskin on all platforms</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">📦</div>
+                                <div class="contact-text">
+                                    <h3>Order Tracking</h3>
+                                    <p>Track your order status online</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="background: linear-gradient(135deg, #faf8f6 0%, #f8f3ee 100%); padding: 25px; border-radius: 10px; border: 1px solid rgba(212, 165, 165, 0.1);">
+                            <h3 style="color: #4a4a4a; margin-bottom: 15px; font-weight: 400;">Response Time</h3>
+                            <p style="color: #8a8a8a; font-weight: 300; margin-bottom: 10px;">We typically respond within 24 hours during business days.</p>
+                            <p style="color: #8a8a8a; font-weight: 300;">For urgent inquiries, please include "URGENT" in your subject line.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="container">
+                <h2 class="luxury-accent" style="text-align: center; font-size: 2.5rem; font-weight: 300; color: #4a4a4a; margin-bottom: 50px; letter-spacing: 2px;">Frequently Asked Questions</h2>
+                <div class="faq-container">
+                    <div class="faq-item fade-in-up">
+                        <button class="faq-question">How should I use the Plumping Lip Balm for best results?</button>
+                        <div class="faq-answer">
+                            <p>Apply a thin layer to clean, dry lips 2-3 times daily. For maximum plumping effect, use consistently for 28 days as clinical studies suggest optimal results within this timeframe.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item fade-in-up">
+                        <button class="faq-question">What makes your ingredients different from other brands?</button>
+                        <div class="faq-answer">
+                            <p>We use clinically-proven actives like Volufiline and Adifyline backed by peer-reviewed research. Every ingredient is selected based on scientific efficacy, not marketing trends.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item fade-in-up">
+                        <button class="faq-question">When will the Wrinkle Eye & Face Serum be available?</button>
+                        <div class="faq-answer">
+                            <p>Our advanced serum is currently in final clinical trials. Join our waitlist to be notified of the official launch date and receive exclusive early access.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item fade-in-up">
+                        <button class="faq-question">Do you offer international shipping?</button>
+                        <div class="faq-answer">
+                            <p>We currently ship within the United States. International shipping options are being developed - subscribe to our newsletter for updates on global availability.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item fade-in-up">
+                        <button class="faq-question">What is your return policy?</button>
+                        <div class="faq-answer">
+                            <p>We offer a 30-day satisfaction guarantee. If you're not completely satisfied with your purchase, contact us for a full refund or exchange within 30 days of delivery.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Collection</h3>
+                    <ul>
+                        <li><a href="#">Plumping Lip Balm - Honey</a></li>
+                        <li><a href="#">Wrinkle Serum (Coming Soon)</a></li>
+                        <li><a href="#">Gift Sets</a></li>
+                        <li><a href="#">Join Waitlist</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Brand</h3>
+                    <ul>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Ingredients</a></li>
+                        <li><a href="#">Science</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Skincare Guide</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Ingredient Safety</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 msme skin. All rights reserved. Luxury skincare, redefined.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(250, 248, 246, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+                header.style.boxShadow = '0 2px 20px rgba(212, 165, 165, 0.1)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, #faf8f6 0%, #f5f0eb 100%)';
+                header.style.backdropFilter = 'none';
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            // Simulate form submission
+            setTimeout(() => {
+                submitBtn.textContent = 'Message Sent!';
+                submitBtn.style.background = '#4CAF50';
+                
+                // Reset form
+                this.reset();
+                
+                setTimeout(() => {
+                    submitBtn.textContent = originalText;
+                    submitBtn.style.background = '';
+                    submitBtn.disabled = false;
+                }, 3000);
+            }, 2000);
+        });
+
+        // FAQ accordion functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isActive = question.classList.contains('active');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq-question').forEach(q => {
+                    q.classList.remove('active');
+                    q.nextElementSibling.classList.remove('active');
+                });
+                
+                // Toggle current item
+                if (!isActive) {
+                    question.classList.add('active');
+                    answer.classList.add('active');
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.8s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
