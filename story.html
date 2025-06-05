@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story - msme skin | Luxury Skincare & Beauty</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #4a4a4a;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #faf8f6 0%, #f5f0eb 100%);
+            color: #4a4a4a;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(218, 165, 165, 0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2.2rem;
+            font-weight: 300;
+            color: #d4a5a5;
+            letter-spacing: 2px;
+            font-style: italic;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: #4a4a4a;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #d4a5a5;
+        }
+
+        .search-container {
+            position: relative;
+        }
+
+        .search-box {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(218, 165, 165, 0.3);
+            border-radius: 25px;
+            padding: 8px 15px;
+            font-size: 0.9rem;
+            color: #4a4a4a;
+            width: 200px;
+            transition: all 0.3s ease;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: #d4a5a5;
+            background: white;
+        }
+
+        .search-box::placeholder {
+            color: #999;
+            font-style: italic;
+        }
+
+        /* Story Hero Section */
+        .story-hero {
+            background: linear-gradient(135deg, #faf8f6 0%, #f5f0eb 100%);
+            color: #4a4a4a;
+            padding: 140px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .story-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="0.5" fill="rgba(212,165,165,0.1)"/><circle cx="75" cy="75" r="0.5" fill="rgba(212,165,165,0.1)"/><circle cx="25" cy="75" r="0.3" fill="rgba(212,165,165,0.05)"/><circle cx="75" cy="25" r="0.3" fill="rgba(212,165,165,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .story-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .story-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            color: #4a4a4a;
+            letter-spacing: 2px;
+            line-height: 1.2;
+        }
+
+        .story-hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+            font-weight: 300;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Story Content Sections */
+        .story-section {
+            padding: 80px 0;
+        }
+
+        .story-section:nth-child(even) {
+            background: linear-gradient(135deg, #faf8f6 0%, #f8f3ee 100%);
+        }
+
+        .story-section:nth-child(odd) {
+            background: white;
+        }
+
+        .story-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .story-content.reverse {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .story-text h2 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: #4a4a4a;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+            position: relative;
+        }
+
+        .story-text h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50px;
+            height: 1px;
+            background: linear-gradient(135deg, #e8c5c5 0%, #d4a5a5 100%);
+        }
+
+        .story-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #8a8a8a;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .story-text .highlight {
+            color: #d4a5a5;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .story-image {
+            height: 400px;
+            background: linear-gradient(135deg, #f5f0eb 0%, #e8c5c5 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .story-image-placeholder {
+            width: 120px;
+            height: 120px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 15px 30px rgba(212, 165, 165, 0.3);
+            font-size: 3rem;
+            color: #d4a5a5;
+        }
+
+        /* Values Section */
+        .values-section {
+            padding: 100px 0;
+            background: white;
+            text-align: center;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .value-card {
+            background: linear-gradient(135deg, #faf8f6 0%, #f8f3ee 100%);
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(212, 165, 165, 0.1);
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(212, 165, 165, 0.2);
+        }
+
+        .value-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #e8c5c5 0%, #d4a5a5 100%);
+            color: white;
+            font-size: 2rem;
+        }
+
+        .value-title {
+            font-size: 1.4rem;
+            font-weight: 300;
+            margin-bottom: 15px;
+            color: #4a4a4a;
+            letter-spacing: 1px;
+        }
+
+        .value-description {
+            color: #8a8a8a;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        /* Timeline Section */
+        .timeline-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #faf8f6 0%, #f8f3ee 100%);
+        }
+
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(135deg, #e8c5c5 0%, #d4a5a5 100%);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 50px;
+            width: 50%;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            padding-right: 40px;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            padding-left: 40px;
+            text-align: left;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: #d4a5a5;
+            border-radius: 50%;
+            top: 20px;
+        }
+
+        .timeline-item:nth-child(odd)::before {
+            right: -7px;
+        }
+
+        .timeline-item:nth-child(even)::before {
+            left: -7px;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .timeline-year {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #d4a5a5;
+            margin-bottom: 10px;
+        }
+
+        .timeline-title {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: #4a4a4a;
+            margin-bottom: 8px;
+        }
+
+        .timeline-description {
+            color: #8a8a8a;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        footer {
+            background: #2a2a2a;
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 20px;
+            color: #d4a5a5;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-section ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 300;
+        }
+
+        .footer-section ul li a:hover {
+            color: #d4a5a5;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #444;
+            padding-top: 30px;
+            color: #999;
+            text-align: center;
+            font-weight: 300;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .search-container {
+                display: none;
+            }
+            
+            .story-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .story-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .story-content.reverse {
+                grid-template-columns: 1fr;
+            }
+            
+            .values-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                left: 0;
+                padding-left: 50px;
+                padding-right: 0;
+                text-align: left;
+            }
+
+            .timeline-item::before {
+                left: 13px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* Luxury touches */
+        .luxury-accent {
+            position: relative;
+        }
+
+        .luxury-accent::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 1px;
+            background: linear-gradient(135deg, #e8c5c5 0%, #d4a5a5 100%);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">msme skin</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="story.html" class="active">Our Story</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="search-container">
+                <input type="text" class="search-box" placeholder="Search products...">
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="story-hero">
+            <div class="container">
+                <div class="story-hero-content fade-in-up">
+                    <h1 class="luxury-accent">Our Story</h1>
+                    <p>A journey of discovery, innovation, and the relentless pursuit of skincare excellence</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="story-section">
+            <div class="container">
+                <div class="story-content fade-in-up">
+                    <div class="story-text">
+                        <h2>Where Science Meets Beauty</h2>
+                        <p>msme skin was born from a simple yet profound belief: <span class="highlight">skincare should deliver visible results without compromise.</span> In a world saturated with empty promises and marketing hype, we decided to take a different path.</p>
+                        <p>Our founder, a passionate advocate for evidence-based beauty, spent years researching the latest advances in cosmetic chemistry. The goal was clear: create products that combine luxury with scientific rigor, delivering real results that you can see and feel.</p>
+                        <p>Every formula begins in our laboratory, where we meticulously select and test ingredients based on peer-reviewed research and clinical efficacy.</p>
+                    </div>
+                    <div class="story-image">
+                        <div class="story-image-placeholder">🔬</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="story-section">
+            <div class="container">
+                <div class="story-content reverse fade-in-up">
+                    <div class="story-image">
+                        <div class="story-image-placeholder">🌿</div>
+                    </div>
+                    <div class="story-text">
+                        <h2>Ingredient Intelligence</h2>
+                        <p>We believe in <span class="highlight">ingredient transparency and clinical validation.</span> Each active component in our formulations is chosen for its proven efficacy and safety profile.</p>
+                        <p>Take our signature Plumping Lip Balm: featuring Volufiline and Adifyline - two clinically-proven peptides that have been shown in studies to increase lip volume by up to 8.3% within 28 days. This isn't marketing speak; this is science.</p>
+                        <p>We source the finest natural ingredients like pure honey, not just for their luxurious feel, but for their documented benefits to skin health and barrier function.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="values-section">
+            <div class="container">
+                <h2 class="luxury-accent">Our Values</h2>
+                <div class="values-grid">
+                    <div class="value-card fade-in-up">
+                        <div class="value-icon">🧪</div>
+                        <h3 class="value-title">Scientific Integrity</h3>
+                        <p class="value-description">Every ingredient is backed by research. Every claim is substantiated by evidence. We believe in the power of science to deliver real beauty results.</p>
+                    </div>
+                    <div class="value-card fade-in-up">
+                        <div class="value-icon">💎</div>
+                        <h3 class="value-title">Uncompromising Quality</h3>
+                        <p class="value-description">From formulation to packaging, we maintain the highest standards. Luxury isn't just about price - it's about excellence in every detail.</p>
+                    </div>
+                    <div class="value-card fade-in-up">
+                        <div class="value-icon">🌍</div>
+                        <h3 class="value-title">Conscious Beauty</h3>
+                        <p class="value-description">We're committed to sustainable practices, ethical sourcing, and creating products that are kind to both your skin and the planet.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <div class="container">
+                <h2 class="luxury-accent" style="text-align: center; margin-bottom: 60px;">Our Journey</h2>
+                <div class="timeline">
+                    <div class="timeline-item fade-in-up">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2024</div>
+                            <div class="timeline-title">The Vision</div>
+                            <div class="timeline-description">msme skin was conceived with a mission to bridge the gap between luxury beauty and scientific efficacy.</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item fade-in-up">
+                        <div class="timeline-content">
+                            <div class="timeline-year">Early 2025</div>
+                            <div class="timeline-title">Research & Development</div>
+                            <div class="timeline-description">Months of research led to our breakthrough formulation combining Volufiline, Adifyline, and pure honey.</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item fade-in-up">
+                        <div class="timeline-content">
+                            <div class="timeline-year">Mid 2025</div>
+                            <div class="timeline-title">Launch</div>
+                            <div class="timeline-description">Our signature Plumping Lip Balm with Honey debuts, receiving acclaim for its innovative formulation.</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item fade-in-up">
+                        <div class="timeline-content">
+                            <div class="timeline-year">Coming Soon</div>
+                            <div class="timeline-title">Expansion</div>
+                            <div class="timeline-description">Our Wrinkle Eye & Face Serum enters final clinical trials, promising to redefine anti-aging skincare.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="story-section">
+            <div class="container">
+                <div class="story-content fade-in-up">
+                    <div class="story-text">
+                        <h2>The Future of Beauty</h2>
+                        <p>We're just getting started. <span class="highlight">msme skin represents a new era of skincare</span> - one where luxury and science converge to create products that truly transform.</p>
+                        <p>Our upcoming collections will continue to push boundaries, incorporating the latest advances in cosmetic chemistry while maintaining our commitment to ingredient transparency and clinical validation.</p>
+                        <p>Join us on this journey as we redefine what luxury skincare can be: effective, elegant, and endlessly innovative.</p>
+                    </div>
+                    <div class="story-image">
+                        <div class="story-image-placeholder">✨</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Collection</h3>
+                    <ul>
+                        <li><a href="#">Plumping Lip Balm - Honey</a></li>
+                        <li><a href="#">Wrinkle Serum (Coming Soon)</a></li>
+                        <li><a href="#">Gift Sets</a></li>
+                        <li><a href="#">Join Waitlist</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Brand</h3>
+                    <ul>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Ingredients</a></li>
+                        <li><a href="#">Science</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Skincare Guide</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Ingredient Safety</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 msme skin. All rights reserved. Luxury skincare, redefined.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(250, 248, 246, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+                header.style.boxShadow = '0 2px 20px rgba(212, 165, 165, 0.1)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, #faf8f6 0%, #f5f0eb 100%)';
+                header.style.backdropFilter = 'none';
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.fade-in-up, .value-card, .timeline-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.8s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
