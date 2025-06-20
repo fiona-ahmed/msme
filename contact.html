@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - msme skin | Korean Luxury Skincare & Beauty</title>
+    <title>Shop - msme skin | Korean Luxury Skincare & Beauty</title>
     <style>
         * {
             margin: 0;
@@ -98,8 +98,8 @@
             font-style: italic;
         }
 
-        /* Contact Hero Section */
-        .contact-hero {
+        /* Hero Section */
+        .shop-hero {
             background: linear-gradient(135deg, #faf8f6 0%, #f5f0eb 100%);
             color: #4a4a4a;
             padding: 140px 0 80px;
@@ -108,7 +108,7 @@
             overflow: hidden;
         }
 
-        .contact-hero::before {
+        .shop-hero::before {
             content: '';
             position: absolute;
             top: 0;
@@ -119,21 +119,21 @@
             opacity: 0.3;
         }
 
-        .contact-hero-content {
+        .shop-hero-content {
             position: relative;
             z-index: 2;
         }
 
-        .contact-hero h1 {
+        .shop-hero h1 {
             font-size: 3.5rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             font-weight: 300;
             color: #4a4a4a;
             letter-spacing: 2px;
             line-height: 1.2;
         }
 
-        .contact-hero p {
+        .shop-hero p {
             font-size: 1.2rem;
             margin-bottom: 2rem;
             opacity: 0.8;
@@ -143,43 +143,28 @@
             margin-right: auto;
         }
 
-        /* Contact Content */
-        .contact-content {
-            padding: 80px 0;
+        /* Filter Section */
+        .filter-section {
             background: white;
+            padding: 40px 0;
+            border-bottom: 1px solid rgba(218, 165, 165, 0.1);
         }
 
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: start;
+        .filter-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
         }
 
-        /* Contact Form */
-        .contact-form {
-            background: linear-gradient(135deg, #faf8f6 0%, #f8f3ee 100%);
-            padding: 50px 40px;
-            border-radius: 15px;
-            border: 1px solid rgba(212, 165, 165, 0.1);
+        .filter-group {
+            display: flex;
+            gap: 15px;
+            align-items: center;
         }
 
-        .contact-form h2 {
-            font-size: 2rem;
-            font-weight: 300;
-            color: #4a4a4a;
-            margin-bottom: 30px;
-            letter-spacing: 1px;
-            text-align: center;
-        }
-
-        .form-group {
-            margin-bottom: 25px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
+        .filter-label {
             font-weight: 300;
             color: #4a4a4a;
             text-transform: uppercase;
@@ -187,173 +172,250 @@
             font-size: 0.9rem;
         }
 
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
+        .filter-select {
+            padding: 8px 15px;
+            border: 1px solid rgba(218, 165, 165, 0.3);
+            border-radius: 20px;
+            background: white;
+            color: #4a4a4a;
+            font-family: 'Georgia', serif;
+            font-size: 0.9rem;
+        }
+
+        .filter-select:focus {
+            outline: none;
+            border-color: #d4a5a5;
+        }
+
+        /* Products Section */
+        .products-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(212, 165, 165, 0.1);
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(212, 165, 165, 0.2);
+        }
+
+        .product-image {
+            height: 300px;
+            background: linear-gradient(135deg, #f5f0eb 0%, #e8c5c5 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-icon {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 8px 20px rgba(212, 165, 165, 0.2);
+        }
+
+        .product-icon.lip::before {
+            content: '';
+            width: 25px;
+            height: 25px;
+            background: #d4a5a5;
+            clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+        }
+
+        .product-icon.serum::before {
+            content: '';
+            width: 25px;
+            height: 40px;
+            background: linear-gradient(to bottom, transparent 0%, transparent 30%, #d4a5a5 30%, #d4a5a5 100%);
+            border-radius: 0 0 12px 12px;
+        }
+
+        .product-icon.serum::after {
+            content: '';
+            position: absolute;
+            top: 18px;
+            width: 12px;
+            height: 10px;
+            background: #d4a5a5;
+            border-radius: 2px 2px 0 0;
+        }
+
+        .product-content {
+            padding: 40px 35px;
+        }
+
+        .product-title {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 15px;
+            color: #4a4a4a;
+            letter-spacing: 1px;
+        }
+
+        .product-description {
+            color: #8a8a8a;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            font-weight: 300;
+            font-size: 1rem;
+        }
+
+        .product-price {
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: #d4a5a5;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .product-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 25px;
+        }
+
+        .feature-tag {
+            background: linear-gradient(135deg, #faf8f6 0%, #f5f0eb 100%);
+            color: #d4a5a5;
+            padding: 5px 14px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: 1px solid rgba(212, 165, 165, 0.2);
+        }
+
+        .add-to-cart-btn {
+            background: linear-gradient(135deg, #e8c5c5 0%, #d4a5a5 100%);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 300;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'Georgia', serif;
             width: 100%;
+            text-align: center;
+        }
+
+        .add-to-cart-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 165, 165, 0.4);
+        }
+
+        .coming-soon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(212, 165, 165, 0.9);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 300;
+        }
+
+        .out-of-stock {
+            opacity: 0.6;
+        }
+
+        /* Newsletter Section */
+        .newsletter {
+            background: linear-gradient(135deg, #faf8f6 0%, #f8f3ee 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .newsletter h2 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: #4a4a4a;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .newsletter p {
+            font-size: 1.2rem;
+            color: #8a8a8a;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .newsletter-form {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-input {
+            flex: 1;
             padding: 15px 20px;
             border: 1px solid rgba(218, 165, 165, 0.3);
-            border-radius: 8px;
+            border-radius: 50px;
             background: white;
             color: #4a4a4a;
             font-family: 'Georgia', serif;
             font-size: 1rem;
-            transition: all 0.3s ease;
         }
 
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
+        .newsletter-input:focus {
             outline: none;
             border-color: #d4a5a5;
-            box-shadow: 0 0 10px rgba(212, 165, 165, 0.2);
         }
 
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .submit-btn {
+        .newsletter-btn {
             background: linear-gradient(135deg, #e8c5c5 0%, #d4a5a5 100%);
             color: white;
-            padding: 15px 40px;
+            padding: 15px 30px;
             border: none;
             border-radius: 50px;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 300;
             cursor: pointer;
             transition: all 0.3s ease;
             text-transform: uppercase;
             letter-spacing: 1px;
             font-family: 'Georgia', serif;
-            width: 100%;
         }
 
-        .submit-btn:hover {
+        .newsletter-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(212, 165, 165, 0.4);
-        }
-
-        /* Contact Info */
-        .contact-info h2 {
-            font-size: 2rem;
-            font-weight: 300;
-            color: #4a4a4a;
-            margin-bottom: 30px;
-            letter-spacing: 1px;
-        }
-
-        .contact-details {
-            margin-bottom: 40px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-            padding: 20px;
-            background: linear-gradient(135deg, #faf8f6 0%, #f8f3ee 100%);
-            border-radius: 10px;
-            border: 1px solid rgba(212, 165, 165, 0.1);
-        }
-
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #e8c5c5 0%, #d4a5a5 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 20px;
-            color: white;
-            font-size: 1.2rem;
-        }
-
-        .contact-text h3 {
-            font-size: 1.1rem;
-            font-weight: 400;
-            color: #4a4a4a;
-            margin-bottom: 5px;
-            letter-spacing: 1px;
-        }
-
-        .contact-text p {
-            color: #8a8a8a;
-            font-weight: 300;
-        }
-
-        /* FAQ Section */
-        .faq-section {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #faf8f6 0%, #f8f3ee 100%);
-        }
-
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            background: white;
-            margin-bottom: 15px;
-            border-radius: 10px;
-            overflow: hidden;
-            border: 1px solid rgba(212, 165, 165, 0.1);
-        }
-
-        .faq-question {
-            padding: 25px 30px;
-            background: white;
-            border: none;
-            width: 100%;
-            text-align: left;
-            font-size: 1.1rem;
-            font-weight: 400;
-            color: #4a4a4a;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            font-family: 'Georgia', serif;
-        }
-
-        .faq-question:hover {
-            background: linear-gradient(135deg, #faf8f6 0%, #f8f3ee 100%);
-        }
-
-        .faq-question::after {
-            content: '+';
-            position: absolute;
-            right: 30px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 1.5rem;
-            color: #d4a5a5;
-            transition: transform 0.3s ease;
-        }
-
-        .faq-question.active::after {
-            transform: translateY(-50%) rotate(45deg);
-        }
-
-        .faq-answer {
-            padding: 0 30px;
-            max-height: 0;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            background: linear-gradient(135deg, #faf8f6 0%, #f8f3ee 100%);
-        }
-
-        .faq-answer.active {
-            padding: 25px 30px;
-            max-height: 200px;
-        }
-
-        .faq-answer p {
-            color: #8a8a8a;
-            line-height: 1.6;
-            font-weight: 300;
+            box-shadow: 0 8px 20px rgba(212, 165, 165, 0.4);
         }
 
         /* Footer - Updated */
@@ -428,18 +490,23 @@
                 display: none;
             }
             
-            .contact-hero h1 {
+            .shop-hero h1 {
                 font-size: 2.5rem;
             }
             
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 50px;
+            .filter-container {
+                flex-direction: column;
+                align-items: flex-start;
             }
             
-            .contact-form,
-            .contact-info {
-                padding: 30px 25px;
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+                gap: 15px;
             }
 
             .footer-links {
@@ -487,9 +554,9 @@
             <div class="logo">msme skin</div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="shop.html">Shop</a></li>
+                <li><a href="shop.html" class="active">Shop</a></li>
                 <li><a href="story.html">Our Story</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
             <div class="search-container">
                 <input type="text" class="search-box" placeholder="Search products...">
@@ -498,113 +565,123 @@
     </header>
 
     <main>
-        <section class="contact-hero">
+        <section class="shop-hero">
             <div class="container">
-                <div class="contact-hero-content fade-in-up">
-                    <h1 class="luxury-accent">Get in Touch</h1>
-                    <p>We're here to help with questions about our Korean skincare products, skincare advice, or any other inquiries</p>
+                <div class="shop-hero-content fade-in-up">
+                    <h1 class="luxury-accent">Shop Collection</h1>
+                    <p>Discover our scientifically-formulated Korean skincare products designed for visible results and luxurious self-care</p>
                 </div>
             </div>
         </section>
 
-        <section class="contact-content">
+        <section class="filter-section">
             <div class="container">
-                <div class="contact-grid">
-                    <div class="contact-form fade-in-up">
-                        <h2>Send us a Message</h2>
-                        <form id="contactForm">
-                            <div class="form-group">
-                                <label for="name">Full Name</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email Address</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="subject">Subject</label>
-                                <select id="subject" name="subject" required>
-                                    <option value="">Select a topic</option>
-                                    <option value="product-inquiry">Product Inquiry</option>
-                                    <option value="skincare-advice">Skincare Advice</option>
-                                    <option value="order-support">Order Support</option>
-                                    <option value="partnership">Partnership Inquiry</option>
-                                    <option value="media">Media & Press</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" placeholder="Tell us how we can help you..." required></textarea>
-                            </div>
-                            <button type="submit" class="submit-btn">Send Message</button>
-                        </form>
+                <div class="filter-container">
+                    <div class="filter-group">
+                        <span class="filter-label">Category:</span>
+                        <select class="filter-select">
+                            <option>All Products</option>
+                            <option>Lip Care</option>
+                            <option>Anti-Aging</option>
+                            <option>Coming Soon</option>
+                        </select>
                     </div>
-
-                    <div class="contact-info fade-in-up">
-                        <h2>Contact Information</h2>
-                        <div class="contact-details">
-                            <div class="contact-item">
-                                <div class="contact-icon">📧</div>
-                                <div class="contact-text">
-                                    <h3>Email Support</h3>
-                                    <p>info@msmeskin.co</p>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <div class="contact-icon">📱</div>
-                                <div class="contact-text">
-                                    <h3>Social Media</h3>
-                                    <p>@msmeskin on all platforms</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div style="background: linear-gradient(135deg, #faf8f6 0%, #f8f3ee 100%); padding: 25px; border-radius: 10px; border: 1px solid rgba(212, 165, 165, 0.1);">
-                            <h3 style="color: #4a4a4a; margin-bottom: 15px; font-weight: 400;">Response Time</h3>
-                            <p style="color: #8a8a8a; font-weight: 300; margin-bottom: 10px;">We typically respond within 24 hours during business days.</p>
-                            <p style="color: #8a8a8a; font-weight: 300;">For urgent inquiries, please include "URGENT" in your subject line.</p>
-                        </div>
+                    <div class="filter-group">
+                        <span class="filter-label">Sort by:</span>
+                        <select class="filter-select">
+                            <option>Featured</option>
+                            <option>Price: Low to High</option>
+                            <option>Price: High to Low</option>
+                            <option>Newest</option>
+                        </select>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="faq-section">
+        <section class="products-section">
             <div class="container">
-                <h2 class="luxury-accent" style="text-align: center; font-size: 2.5rem; font-weight: 300; color: #4a4a4a; margin-bottom: 50px; letter-spacing: 2px;">Frequently Asked Questions</h2>
-                <div class="faq-container">
-                    <div class="faq-item fade-in-up">
-                        <button class="faq-question">How should I use the Plumping Lip Balm for best results?</button>
-                        <div class="faq-answer">
-                            <p>Apply a thin layer to clean, dry lips 2-3 times daily. For maximum plumping effect, use consistently for 28 days as clinical studies suggest optimal results within this timeframe.</p>
+                <div class="products-grid">
+                    <!-- Plumping Lip Balm -->
+                    <div class="product-card fade-in-up">
+                        <div class="product-image">
+                            <div class="product-icon lip"></div>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">Plumping Lip Balm - Honey</h3>
+                            <p class="product-description">Luxurious 20g lip treatment featuring clinically-proven Volufiline and Adifyline for volume increase, infused with honey for nourishment.</p>
+                            
+                            <div class="product-price">$39.00</div>
+                            
+                            <div class="product-features">
+                                <span class="feature-tag">Volufiline</span>
+                                <span class="feature-tag">Adifyline</span>
+                                <span class="feature-tag">Deep Hydration</span>
+                                <span class="feature-tag">Filler Replacement</span>
+                                <span class="feature-tag">Pure Honey</span>
+                            </div>
+                            
+                            <button class="add-to-cart-btn">Join Waitlist</button>
                         </div>
                     </div>
-                    <div class="faq-item fade-in-up">
-                        <button class="faq-question">What makes your Korean skincare ingredients different from other brands?</button>
-                        <div class="faq-answer">
-                            <p>We use clinically-proven actives like Volufiline and Adifyline backed by peer-reviewed research. Every ingredient is selected based on scientific efficacy from Korean skincare innovation, not marketing trends.</p>
+
+                    <!-- Eye and Lines Serum -->
+                    <div class="product-card fade-in-up out-of-stock">
+                        <div class="coming-soon">Coming Soon</div>
+                        <div class="product-image">
+                            <div class="product-icon serum"></div>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">Eye and Lines Serum</h3>
+                            <p class="product-description">Advanced anti-aging serum with Volufiline and Adifyline targeting fine lines and wrinkles, while helping with hollow and puffy undereyes.</p>
+                            
+                            <div class="product-price">$39.00</div>
+                            
+                            <div class="product-features">
+                                <span class="feature-tag">Volufiline</span>
+                                <span class="feature-tag">Adifyline</span>
+                                <span class="feature-tag">Fast Absorption</span>
+                                <span class="feature-tag">Anti-Aging</span>
+                                <span class="feature-tag">Clinical Grade</span>
+                            </div>
+                            
+                            <button class="add-to-cart-btn">Join Waitlist</button>
                         </div>
                     </div>
-                    <div class="faq-item fade-in-up">
-                        <button class="faq-question">When will the Eye and Lines Cream be available?</button>
-                        <div class="faq-answer">
-                            <p>Our advanced serum is currently being tested by our research scientist team. Join our waitlist to be notified of the official launch date and receive exclusive early access.</p>
+
+                    <!-- Gift Set -->
+                    <div class="product-card fade-in-up out-of-stock">
+                        <div class="coming-soon">Coming Soon</div>
+                        <div class="product-image">
+                            <div class="product-icon lip"></div>
                         </div>
-                    </div>
-                    <div class="faq-item fade-in-up">
-                        <button class="faq-question">Do you offer international shipping?</button>
-                        <div class="faq-answer">
-                            <p>We offer shipping within the UK and USA only. Additional international shipping options are being developed - subscribe to our newsletter for updates on global availability.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item fade-in-up">
-                        <button class="faq-question">What is your return policy?</button>
-                        <div class="faq-answer">
-                            <p>We offer a 30-day satisfaction guarantee. If you're not completely satisfied with your Korean skincare purchase, contact us for a full refund or exchange within 30 days of delivery.</p>
+                        <div class="product-content">
+                            <h3 class="product-title">Complete Skincare Set</h3>
+                            <p class="product-description">Curated collection featuring our signature lip balm and upcoming serum, beautifully packaged for gifting or personal indulgence.</p>
+                            
+                            <div class="product-price">$69.00</div>
+                            
+                            <div class="product-features">
+                                <span class="feature-tag">Gift Ready</span>
+                                <span class="feature-tag">Complete Routine</span>
+                                <span class="feature-tag">Limited Edition</span>
+                            </div>
+                            
+                            <button class="add-to-cart-btn">Join Waitlist</button>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section class="newsletter">
+            <div class="container">
+                <h2 class="luxury-accent">Stay Updated</h2>
+                <p>Be the first to know about new Korean skincare launches, exclusive offers, and skincare insights</p>
+                <form class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
+                    <button type="submit" class="newsletter-btn">Subscribe</button>
+                </form>
             </div>
         </section>
     </main>
@@ -647,50 +724,32 @@
             }
         });
 
-        // Contact form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const submitBtn = this.querySelector('.submit-btn');
-            const originalText = submitBtn.textContent;
-            
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
-            
-            // Simulate form submission
-            setTimeout(() => {
-                submitBtn.textContent = 'Message Sent!';
-                submitBtn.style.background = '#4CAF50';
-                
-                // Reset form
-                this.reset();
-                
+        // Add to cart functionality
+        document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.textContent = 'Added to Waitlist!';
+                this.style.background = '#4CAF50';
                 setTimeout(() => {
-                    submitBtn.textContent = originalText;
-                    submitBtn.style.background = '';
-                    submitBtn.disabled = false;
-                }, 3000);
-            }, 2000);
+                    this.textContent = 'Join Waitlist';
+                    this.style.background = '';
+                }, 2000);
+            });
         });
 
-        // FAQ accordion functionality
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
-                const isActive = question.classList.contains('active');
-                
-                // Close all FAQ items
-                document.querySelectorAll('.faq-question').forEach(q => {
-                    q.classList.remove('active');
-                    q.nextElementSibling.classList.remove('active');
-                });
-                
-                // Toggle current item
-                if (!isActive) {
-                    question.classList.add('active');
-                    answer.classList.add('active');
-                }
-            });
+        // Newsletter form
+        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('.newsletter-btn');
+            const input = this.querySelector('.newsletter-input');
+            
+            btn.textContent = 'Subscribed!';
+            btn.style.background = '#4CAF50';
+            input.value = '';
+            
+            setTimeout(() => {
+                btn.textContent = 'Subscribe';
+                btn.style.background = '';
+            }, 3000);
         });
 
         // Intersection Observer for animations
@@ -708,8 +767,8 @@
             });
         }, observerOptions);
 
-        // Observe all animated elements
-        document.querySelectorAll('.fade-in-up').forEach(el => {
+        // Observe all product cards
+        document.querySelectorAll('.product-card').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
             el.style.transition = 'all 0.8s ease';
