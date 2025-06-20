@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>msme skin | Join the Exclusive Launch Waitlist</title>
+    <title>msme skin | Korean Luxury Skincare</title>
     <style>
         * {
             margin: 0;
@@ -24,7 +24,7 @@
             padding: 0 20px;
         }
 
-        /* Header - Simplified */
+        /* Header - With Navigation */
         header {
             background: linear-gradient(135deg, #faf8f6 0%, #f5f0eb 100%);
             color: #4a4a4a;
@@ -37,9 +37,9 @@
             border-bottom: 1px solid rgba(218, 165, 165, 0.2);
         }
 
-        .header-content {
+        nav {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
         }
 
@@ -51,7 +51,54 @@
             font-style: italic;
         }
 
-        /* Hero Section - Waitlist Focused */
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: #4a4a4a;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #d4a5a5;
+        }
+
+        .search-container {
+            position: relative;
+        }
+
+        .search-box {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(218, 165, 165, 0.3);
+            border-radius: 25px;
+            padding: 8px 15px;
+            font-size: 0.9rem;
+            color: #4a4a4a;
+            width: 200px;
+            transition: all 0.3s ease;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: #d4a5a5;
+            background: white;
+        }
+
+        .search-box::placeholder {
+            color: #999;
+            font-style: italic;
+        }
+
+        /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #faf8f6 0%, #f5f0eb 100%);
             color: #4a4a4a;
@@ -78,26 +125,6 @@
         .hero-content {
             position: relative;
             z-index: 2;
-        }
-
-        .launch-badge {
-            background: linear-gradient(135deg, #e8c5c5 0%, #d4a5a5 100%);
-            color: white;
-            display: inline-block;
-            padding: 12px 30px;
-            border-radius: 30px;
-            margin-bottom: 30px;
-            font-weight: 300;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
         }
 
         .hero h1 {
@@ -277,7 +304,7 @@
             clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
         }
 
-        .coming-soon {
+        .join-waitlist {
             background: linear-gradient(135deg, #e8c5c5 0%, #d4a5a5 100%);
             color: white;
             padding: 8px 20px;
@@ -302,6 +329,29 @@
             margin-bottom: 30px;
             line-height: 1.7;
             font-weight: 300;
+        }
+
+        .clinical-evidence {
+            background: linear-gradient(135deg, #faf8f6 0%, #f8f3ee 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(212, 165, 165, 0.1);
+        }
+
+        .clinical-evidence h4 {
+            color: #d4a5a5;
+            font-size: 1rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 400;
+        }
+
+        .clinical-evidence p {
+            font-size: 0.95rem;
+            color: #8a8a8a;
+            margin-bottom: 0;
         }
 
         .features-list {
@@ -407,18 +457,6 @@
             margin-right: auto;
         }
 
-        .urgency-text {
-            background: rgba(212, 165, 165, 0.1);
-            color: #d4a5a5;
-            padding: 15px 30px;
-            border-radius: 30px;
-            display: inline-block;
-            margin-bottom: 30px;
-            font-size: 1rem;
-            letter-spacing: 1px;
-            border: 1px solid rgba(212, 165, 165, 0.2);
-        }
-
         .cta-button {
             background: linear-gradient(135deg, #e8c5c5 0%, #d4a5a5 100%);
             color: white;
@@ -441,7 +479,7 @@
             box-shadow: 0 15px 30px rgba(212, 165, 165, 0.4);
         }
 
-        /* Footer - Minimal */
+        /* Footer - Updated */
         footer {
             background: #2a2a2a;
             color: white;
@@ -453,6 +491,28 @@
             color: #999;
             font-weight: 300;
             margin-bottom: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: #d4a5a5;
         }
 
         .social-links {
@@ -467,10 +527,18 @@
             text-decoration: none;
             transition: color 0.3s ease;
             font-size: 1.5rem;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
         }
 
         .social-link:hover {
             color: #d4a5a5;
+            background: rgba(212, 165, 165, 0.1);
         }
 
         /* Success Message */
@@ -487,6 +555,14 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .search-container {
+                display: none;
+            }
+
             .hero h1 {
                 font-size: 3rem;
             }
@@ -518,6 +594,11 @@
 
             .final-cta h2 {
                 font-size: 2.2rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
             }
         }
 
@@ -563,20 +644,26 @@
 </head>
 <body>
     <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">msme skin</div>
+        <nav class="container">
+            <div class="logo">msme skin</div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="story.html">Our Story</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="search-container">
+                <input type="text" class="search-box" placeholder="Search products...">
             </div>
-        </div>
+        </nav>
     </header>
 
     <main>
         <section class="hero">
             <div class="container">
                 <div class="hero-content fade-in-up">
-                    <div class="launch-badge">Exclusive Pre-Launch Access</div>
-                    <h1>Luxury Skincare, Redefined</h1>
-                    <p class="subtitle">Be among the first to experience our revolutionary plumping lip balm with honey</p>
+                    <h1>Korean Skincare, Redefined</h1>
+                    <p class="subtitle">Be among the first to experience our revolutionary plumping lip balm with honey and our eye and lines cream to target dark and hollow under eyes</p>
                     <p class="description">Functional skincare engineered for visible results. Join our exclusive waitlist for early access, special pricing, and insider perks.</p>
                     
                     <div class="waitlist-form">
@@ -627,12 +714,17 @@
                         <div class="product-mockup">
                             <div class="product-icon"></div>
                         </div>
-                        <div class="coming-soon">Coming Soon</div>
+                        <div class="join-waitlist">Join Waitlist</div>
                     </div>
                     
                     <div class="product-details fade-in-up">
                         <h3>Plumping Lip Balm - Honey</h3>
                         <p>Our signature 20g lip treatment combines clinically-proven Volufiline and Adifyline with pure honey for the ultimate in luxury lip care. Experience the future of natural enhancement.</p>
+                        
+                        <div class="clinical-evidence">
+                            <h4>Clinical Evidence</h4>
+                            <p>Volufiline: Proven to increase lip volume by up to 8.3% in 28 days through clinical studies. Adifyline: Demonstrated significant improvement in lip fullness and definition within 4 weeks of consistent use.</p>
+                        </div>
                         
                         <ul class="features-list">
                             <li>Clinically proven volume increase</li>
@@ -641,6 +733,36 @@
                             <li>Natural filler alternative</li>
                             <li>Luxurious 20g treatment size</li>
                         </ul>
+                    </div>
+                </div>
+
+                <div class="preview-grid" style="margin-top: 80px;">
+                    <div class="product-details fade-in-up">
+                        <h3>Eye and Lines Cream</h3>
+                        <p>Advanced anti-aging formula featuring Volufiline and Adifyline specifically targeting dark circles, hollow under-eyes, and fine lines. Fast-absorbing Korean technology for visible results.</p>
+                        
+                        <div class="clinical-evidence">
+                            <h4>Clinical Evidence</h4>
+                            <p>Formulated with the same proven peptides as our lip balm, specifically adapted for the delicate eye area to reduce puffiness, brighten dark circles, and smooth fine lines.</p>
+                        </div>
+                        
+                        <ul class="features-list">
+                            <li>Targets dark and hollow under-eyes</li>
+                            <li>Fast absorption technology</li>
+                            <li>Anti-aging peptide complex</li>
+                            <li>Gentle for sensitive eye area</li>
+                            <li>Clinically proven ingredients</li>
+                        </ul>
+                    </div>
+
+                    <div class="product-visual fade-in-up">
+                        <div class="product-mockup">
+                            <div class="product-icon" style="position: relative;">
+                                <div style="width: 25px; height: 40px; background: linear-gradient(to bottom, transparent 0%, transparent 30%, #d4a5a5 30%, #d4a5a5 100%); border-radius: 0 0 12px 12px;"></div>
+                                <div style="position: absolute; top: 18px; width: 12px; height: 10px; background: #d4a5a5; border-radius: 2px 2px 0 0;"></div>
+                            </div>
+                        </div>
+                        <div class="join-waitlist">Join Waitlist</div>
                     </div>
                 </div>
             </div>
@@ -662,13 +784,13 @@
                         <div class="stat-label">Satisfaction Promise</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">Chemist</div>
-                        <div class="stat-label">Led Formulation</div>
+                        <div class="stat-number">Korean</div>
+                        <div class="stat-label">Skincare Innovation</div>
                     </div>
                 </div>
 
                 <div class="testimonial fade-in-up">
-                    <p class="testimonial-text">"I've been following msme skin's development journey and can't wait to try their honey lip balm. The science-backed approach to luxury skincare is exactly what the industry needs."</p>
+                    <p class="testimonial-text">"I've been following msme skin's development journey and can't wait to try their honey lip balm. The science-backed approach to Korean luxury skincare is exactly what the industry needs."</p>
                     <p class="testimonial-author">— Sarah M., Early Tester</p>
                 </div>
             </div>
@@ -676,9 +798,8 @@
 
         <section class="final-cta">
             <div class="container">
-                <div class="urgency-text">Limited Early Access • Launch January 2025</div>
                 <h2>Don't Miss Your Spot</h2>
-                <p>Join thousands who are already on the list for exclusive early access to our revolutionary luxury skincare line</p>
+                <p>Join thousands who are already on the list for exclusive early access to our revolutionary Korean luxury skincare line</p>
                 <a href="#waitlist-form" class="cta-button">Join Waitlist Now</a>
             </div>
         </section>
@@ -687,12 +808,21 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2025 msme skin. All rights reserved. Luxury skincare, redefined.</p>
+                <p>&copy; 2025 msme skin. All rights reserved. Korean skincare, redefined.</p>
+                
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="shop.html">Shop</a>
+                    <a href="story.html">Our Story</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+
                 <div class="social-links">
-                    <a href="#" class="social-link">📘</a>
-                    <a href="#" class="social-link">📷</a>
-                    <a href="#" class="social-link">🐦</a>
-                    <a href="#" class="social-link">📱</a>
+                    <a href="#" class="social-link" title="TikTok">📹</a>
+                    <a href="#" class="social-link" title="Instagram">📷</a>
+                    <a href="#" class="social-link" title="YouTube">📺</a>
+                    <a href="#" class="social-link" title="Facebook">📘</a>
+                    <a href="#" class="social-link" title="RedNote">📱</a>
                 </div>
             </div>
         </div>
